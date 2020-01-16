@@ -7,18 +7,16 @@
 	"description": "What am I about?",
 	"main": "server.js",
 	"scripts": {
-		"start": "node server.js",
-		"test-u": "mocha --ui tdd tests/1_unit-tests.js",
-		"test-f": "mocha --ui tdd tests/2_functional-tests.js"
+		"start": "node server.js"
 	},
 	"dependencies": {
+		"express": "^5.0.0-alpha.2",
 		"body-parser": "^1.15.2",
+		"mocha": "^3.1.0",
 		"chai": "^3.5.0",
 		"chai-http": "^3.0.0",
-		"cors": "^2.8.1",
-		"express": "^5.0.0-alpha.2",
-		"mocha": "^7.0.0",
-		"zombie": "^6.1.4"
+		"zombie": "^4.2.1",
+		"cors": "^2.8.1"
 	},
 	"engines": {
 		"node": "4.4.5"
