@@ -14,3 +14,36 @@ npm run test-f # functional tests
 <https://glitch.com/edit/#!/boilerplate-mochachai-hchiam>
 
 <https://boilerplate-mochachai-hchiam.glitch.me>
+
+```js
+var chai = require('chai');
+var assert = chai.assert;
+var server = require('../server'); // import the Express app
+var chaiHttp = require('chai-http');
+chai.use(chaiHttp);
+```
+
+```js
+assert.equal(1, 1);
+```
+
+```js
+chai.request(server)
+  .get('/hello?name=Your Name')
+  .end(function(err, res) {
+    assert.equal(res.status, 200);
+    assert.equal(res.text, 'hello Your Name');
+    done();
+  });
+```
+
+```js
+chai.request(server)
+  .put('/travellers')
+  .send({surname: 'Polo'})
+  .end(function(err, res) {
+    assert.equal(res.status, 200);
+    assert.equal(res.text, 'hello Your Name');
+    done();
+  });
+```
