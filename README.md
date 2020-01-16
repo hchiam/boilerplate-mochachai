@@ -47,3 +47,20 @@ chai.request(server)
     done();
   });
 ```
+
+```js
+// headless test of page at URL: https://boilerplate-mochachai-hchiam.glitch.me
+Browser.site = 'https://boilerplate-mochachai-hchiam.glitch.me';
+...
+const browser = new Browser();
+...
+browser
+  .fill('surname', 'Polo')
+  .then(() => browser.pressButton('submit', function() {
+    browser.assert.success();
+    browser.assert.text('span#name', 'Marco');
+    browser.assert.text('span#surname', 'Polo');
+    browser.assert.element('span#dates', 1); // element has count = 1
+    done(); // since async test, must call done()
+  }));
+```
